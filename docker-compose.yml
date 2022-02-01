@@ -15,9 +15,7 @@ services:
       - MYSQL_USER=${DB_USER}
       - MYSQL_PASSWORD=${DB_PASSWORD}
     ports:
-      - "33307:3306"
-    depends_on:
-      - nodejs
+      - "33306:3306"
 
   adminer:
     image: adminer
