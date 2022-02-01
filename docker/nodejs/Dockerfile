@@ -1,5 +1,5 @@
 #Dockerfile
-FROM node:latest
+FROM node:lts
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
