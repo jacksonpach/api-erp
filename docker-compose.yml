@@ -1,24 +1,29 @@
 version: "3.7"
 
 services:
+  database:
+    build: docker/data
+    container_name: ${APP}-database
+    working_dir: /mnt/api
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    user: mysql
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "33307:3307"
+    depends_on:
+      - nodejs
+
   nodejs:
     build: docker/nodejs
     working_dir: /mnt/api
     container_name: ${APP}-node
     volumes:
-      - ".:/mnt/api"
+      - "./src:/mnt/api"
     ports:
       - "4003:4000"
-
-  redis:
-    image: redis:alpine
-    container_name: ${APP}-redis
-
-  adminredis:
-    image: erikdubbelboer/phpredisadmin
-    container_name: ${APP}-admin-redis
-    environment:
-      - REDIS_1_HOST=redis
-      - REDIS_1_NAME=MyRedis
-    ports:
-      - "8091:80"
