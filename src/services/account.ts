@@ -5,7 +5,7 @@ import {
     IResponseBalanceDestination,
     IResponseBalanceOrigin,
     IResponseBalanceTransfer
-} from "../models/generics";
+} from "../interfaces/generics";
 
 
 class AccountService {

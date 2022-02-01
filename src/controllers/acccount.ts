@@ -2,7 +2,7 @@ import {SUCCESS, NOT_FOUND, BODY_OK, CREATE, NO_EXISTS_ACCOUNT} from '../config'
 import {Request, Response} from "express"
 
 import AccountService from "../services/account";
-import {IEvent} from "../models/generics";
+import {IEvent} from "../interfaces/generics";
 
 class Account {
 
