@@ -1,4 +1,4 @@
-import {SUCCESS, NOT_FOUND, BODY_OK, CREATE, NO_EXISTS_ACCOUNT} from '../config'
+import {SUCCESS, NOT_FOUND, BODY_OK, CREATE, NO_EXISTS_ACCOUNT} from '../../config'
 import {Request, Response} from "express"
 
 import AccountService from "../services/account";

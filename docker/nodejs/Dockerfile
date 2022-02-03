@@ -17,5 +17,3 @@ EXPOSE 4000
 
 CMD ["npm", "run", "dev"]
 
-# pm2 start "npm run start"
-#end of Dockerfile

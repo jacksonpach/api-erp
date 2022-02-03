@@ -1,7 +1,15 @@
 import {Router} from "express";
-import Account from "./controllers/acccount";
+import Account from "./src/controllers/acccount";
 
 export const router = Router()
+
+
+router.post('/reset', async (request, response) => {
+        const account = new Account()
+        await account.getReset(response)
+    }
+)
+
 
 router.post('/reset', async (request, response) => {
         const account = new Account()

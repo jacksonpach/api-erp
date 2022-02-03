@@ -1,9 +1,10 @@
 version: "3.7"
 
 services:
+
   database:
     build: docker/data
-    container_name: ${APP}-database
+    container_name: ${API}-database
     working_dir: /mnt/api
     volumes:
       - ./docker/mysql:/var/lib/mysql
@@ -21,13 +22,14 @@ services:
     image: adminer
     restart: always
     ports:
-    - "8089:8080"
+      - "8089:8080"
 
-  nodejs:
+  node:
     build: docker/nodejs
     working_dir: /mnt/api
-    container_name: ${APP}-node
+    container_name: ${API}-node
     volumes:
-      - ".:/mnt/api"
+      - "./api:/mnt/api"
     ports:
-      - "4003:4000"
+      - "4002:4000"
+      - "56745:56745"
