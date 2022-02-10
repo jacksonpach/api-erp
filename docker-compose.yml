@@ -4,7 +4,7 @@ services:
 
   database:
     build: docker/data
-    container_name: ${API}-database
+    container_name: erp-database
     working_dir: /mnt/api
     volumes:
       - ./docker/mysql:/var/lib/mysql
@@ -27,9 +27,9 @@ services:
   node:
     build: docker/nodejs
     working_dir: /mnt/api
-    container_name: ${API}-node
+    container_name: erp-node
     volumes:
       - "./api:/mnt/api"
     ports:
-      - "4002:4000"
-      - "56745:56745"
+      - "4300:4000"
+      - "56746:56746"
