@@ -5,16 +5,15 @@ export const router = Router()
 
 router.post('/', (req, res) => res.send('Is alive'))
 
-router.post('/login', async (request, response) => {
+router.post('/token', async (request, response) => {
     const token = new TokenController()
-    await token.createUser(request, response)
-
+    await token.getToken(request, response)
     }
 )
 
+//@todo add middleware JWT
+
 router.post('/create', async (request, response) => {
-        const token = new TokenController()
-        await token.createUser(request, response)
 
     }
 )
