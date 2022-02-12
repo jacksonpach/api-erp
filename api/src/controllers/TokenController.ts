@@ -1,4 +1,5 @@
 import {Request, Response} from "express"
+
 import TokenService from "../services/TokenService";
 import BaseController from "./BaseController";
 import {API_KEY_STRING, BAD_REQUEST, SUCCESS, NOT_FOUND} from "../config/config";

@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import {router} from './routes';
-
+import "reflect-metadata";
 export const app = express()
 
 app.use(express.json())
